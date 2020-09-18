@@ -6,7 +6,7 @@ class SliderBloc {
 
   SliderBloc() {
     _sliderValue = 100;
-    _actionController.stream.listen(_increaseStream);
+    _actionController.stream.listen(_sliderValueStream);
   }
 
   final _counterStream = BehaviorSubject<int>.seeded(1);
@@ -15,9 +15,9 @@ class SliderBloc {
   Sink get _addValue => _counterStream.sink;
 
   StreamController _actionController = StreamController();
-  StreamSink get incrementCounter => _actionController.sink;
+  StreamSink get sliderValueStream => _actionController.sink;
 
-  void _increaseStream(data) {
+  void _sliderValueStream(data) {
     _sliderValue = data;
     _addValue.add(_sliderValue);
   }
