@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/slider.dart';
+import 'package:flutter_test_app/test.dart';
+import 'package:flutter_test_app/tick_animation.dart';
+
+import 'circle_animation.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SliderAnimation(),
+      home: AnimatedPainterTest(),
     );
   }
 }
